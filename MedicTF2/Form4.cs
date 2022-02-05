@@ -11,10 +11,10 @@ using MySql.Data.MySqlClient;
 
 namespace MedicTF2
 {
-    public partial class JoinPatient : Form
+    public partial class Form4 : Form
     {
       
-        public JoinPatient()
+        public Form4()
         {
             InitializeComponent();
         }

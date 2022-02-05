@@ -11,8 +11,12 @@ using MySql.Data.MySqlClient;
 
 namespace MedicTF2
 {
-    public partial class ListChambers : Form
+    public partial class Form8 : Form
     {
+        public Form8()
+        {
+            InitializeComponent();
+        }
         //Переменная соединения
         MySqlConnection conn;
         //DataAdapter представляет собой объект Command , получающий данные из источника данных.
@@ -28,14 +32,13 @@ namespace MedicTF2
         //Переменная для ID записи в БД, выбранной в гриде. Пока она не содердит значения, лучше его инициализировать с 0
         //что бы в БД не отправлялся null
         string id_selected_rows = "0";
-        public ListChambers()
-        {
-            InitializeComponent();
-        }
+
         public void GetListUsers()
         {
             //Запрос для вывода строк в БД
-            string commandStr = "SELECT id_palata AS 'Палата', number_koiki AS 'Койка' FROM koiki";
+            string commandStr = "SELECT id AS 'Код', id_vrach AS 'Код врача', id_pasient AS 'Код пациента', " +
+                "id_palata AS 'Код палаты', id_koika AS 'Код койки', date_prebitia AS 'Дата пребытия'," +
+                "date_lechit AS 'Дата лечение', date_vipiski AS 'Дата выписки' FROM stasionar";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
@@ -60,13 +63,7 @@ namespace MedicTF2
             GetListUsers();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            //Метод обновления dataGridView
-            reload_list();
-        }
-
-        private void Form7_Load(object sender, EventArgs e)
+        private void Form8_Load(object sender, EventArgs e)
         {
             string connStr = "server=caseum.ru;port=33333;user=st_1_1_19;database=st_1_1_19;password=79335329;";
             // создаём объект для подключения к БД
@@ -76,20 +73,61 @@ namespace MedicTF2
             //Видимость полей в гриде
             dataGridView1.Columns[0].Visible = true;
             dataGridView1.Columns[1].Visible = true;
+            dataGridView1.Columns[2].Visible = true;
+            dataGridView1.Columns[3].Visible = true;
+            dataGridView1.Columns[4].Visible = true;
+            dataGridView1.Columns[5].Visible = true;
+            dataGridView1.Columns[6].Visible = true;
+            dataGridView1.Columns[7].Visible = true;
             //Ширина полей
-            dataGridView1.Columns[0].FillWeight = 10;
-            dataGridView1.Columns[1].FillWeight = 10;
-
+            dataGridView1.Columns[0].FillWeight = 5;
+            dataGridView1.Columns[1].FillWeight = 25;
+            dataGridView1.Columns[2].FillWeight = 12;
+            dataGridView1.Columns[3].FillWeight = 13;
+            dataGridView1.Columns[4].FillWeight = 17;
+            dataGridView1.Columns[5].FillWeight = 14;
+            dataGridView1.Columns[6].FillWeight = 15;
+            dataGridView1.Columns[7].FillWeight = 15;
             //Режим для полей "Только для чтения"
             dataGridView1.Columns[0].ReadOnly = true;
             dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[2].ReadOnly = true;
+            dataGridView1.Columns[3].ReadOnly = true;
+            dataGridView1.Columns[4].ReadOnly = true;
+            dataGridView1.Columns[5].ReadOnly = true;
+            dataGridView1.Columns[6].ReadOnly = true;
+            dataGridView1.Columns[7].ReadOnly = true;
             //Растягивание полей грида
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             //Убираем заголовки строк
             dataGridView1.RowHeadersVisible = false;
             //Показываем заголовки столбцов
             dataGridView1.ColumnHeadersVisible = true;
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            //Метод обновления dataGridView
+            reload_list();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            //Тестим вывод ID выбранной строки в MessageBox
+            MessageBox.Show("Содержимое поля Код, в выбранной строке" + id_selected_rows);
+            //Формируем запрос на удаление из БД на основании полученного ID записи в БД
+            MessageBox.Show("DELETE FROM pasienti WHERE id_pasient=" + id_selected_rows);
+            //В данной кнопке, вы можете вызвать метод удаления строки и в качестве
+            //параметра передать ему переменную id_selected_rows в которой хранится
+            //id записи в БД для удаления. Аналогично, вы можете изменить любую строку
+            //так же, передав в качестве параметра данную переменную
         }
     }
 }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace MedicTF2
 {
-    public partial class UptadeAddmision : Form
+    public partial class Form9 : Form
     {
-        public UptadeAddmision()
+        public Form9()
         {
             InitializeComponent();
-        }
-
-        private void UptadeAddmision_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

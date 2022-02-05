@@ -1,7 +1,7 @@
 ﻿
 namespace MedicTF2
 {
-    partial class MainMenu
+    partial class Form3
     {
         /// <summary>
         /// Required designer variable.

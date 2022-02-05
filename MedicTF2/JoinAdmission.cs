@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MedicTF2
 {
-    public partial class Form12 : Form
+    public partial class JoinAdmission : Form
     {
-        public Form12()
+        public JoinAdmission()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

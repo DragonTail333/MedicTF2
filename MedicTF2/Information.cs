@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MedicTF2
 {
-    public partial class Form7 : Form
+    public partial class Information : Form
     {
-        public Form7()
+        public Information()
         {
             InitializeComponent();
         }

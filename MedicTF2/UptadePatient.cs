@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using static MedicTF2.Form5;
+using static MedicTF2.ListPatient;
 
 namespace MedicTF2
 {
-    public partial class Form11 : Form
+    public partial class UptadePatient : Form
     {
-        public Form11()
+        public UptadePatient()
         {
             InitializeComponent();
         }

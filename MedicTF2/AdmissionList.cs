@@ -125,11 +125,23 @@ namespace MedicTF2
             //Тестим вывод ID выбранной строки в MessageBox
             MessageBox.Show("Содержимое поля Код, в выбранной строке" + id_selected_rows);
             //Формируем запрос на удаление из БД на основании полученного ID записи в БД
-            MessageBox.Show("DELETE FROM pasienti WHERE id_pasient=" + id_selected_rows);
+            MessageBox.Show("DELETE FROM stasionar WHERE id=" + id_selected_rows);
             //В данной кнопке, вы можете вызвать метод удаления строки и в качестве
             //параметра передать ему переменную id_selected_rows в которой хранится
             //id записи в БД для удаления. Аналогично, вы можете изменить любую строку
             //так же, передав в качестве параметра данную переменную
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            AdmissionUPDATE Form = new AdmissionUPDATE();
+            Form.ShowDialog();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            AdmissionINSERT Form = new AdmissionINSERT();
+            Form.ShowDialog();
         }
     }
 }

@@ -143,7 +143,7 @@ namespace MedicTF2
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(117, 49);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(397, 20);
             this.textBox1.TabIndex = 9;
@@ -151,7 +151,7 @@ namespace MedicTF2
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(117, 85);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(397, 20);
             this.textBox2.TabIndex = 10;
@@ -159,7 +159,7 @@ namespace MedicTF2
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(117, 120);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(397, 20);
             this.textBox3.TabIndex = 11;
@@ -167,7 +167,7 @@ namespace MedicTF2
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(117, 153);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(397, 20);
             this.textBox4.TabIndex = 12;
@@ -175,7 +175,7 @@ namespace MedicTF2
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(117, 185);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(397, 20);
             this.textBox5.TabIndex = 13;
@@ -183,7 +183,7 @@ namespace MedicTF2
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(117, 218);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(397, 20);
             this.textBox6.TabIndex = 14;
@@ -191,7 +191,7 @@ namespace MedicTF2
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(117, 248);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(397, 20);
             this.textBox7.TabIndex = 15;
@@ -199,7 +199,7 @@ namespace MedicTF2
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(117, 276);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(397, 20);
             this.textBox8.TabIndex = 16;
@@ -207,12 +207,13 @@ namespace MedicTF2
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(167, 317);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(199, 27);
             this.button1.TabIndex = 17;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdmissionINSERT
             // 
@@ -240,7 +241,7 @@ namespace MedicTF2
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdmissionINSERT";
             this.Text = "Добавить приём";
             this.Load += new System.EventHandler(this.AdmissionINSERT_Load);

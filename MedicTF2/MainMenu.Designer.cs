@@ -113,6 +113,7 @@ namespace MedicTF2
             this.Controls.Add(this.button2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главное меню";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);

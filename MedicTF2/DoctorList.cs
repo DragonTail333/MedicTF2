@@ -55,6 +55,17 @@ namespace MedicTF2
             toolStripLabel2.Text = (count_rows).ToString();
         }
 
+        //Метод получения ID выделенной строки, для последующего вызова его в нужных методах
+        public void GetSelectedIDString()
+        {
+            //Переменная для индекс выбранной строки в гриде
+            string index_selected_rows;
+            //Индекс выбранной строки
+            index_selected_rows = dataGridView1.SelectedCells[0].RowIndex.ToString();
+            //ID конкретной записи в Базе данных, на основании индекса строки
+            id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selected_rows)].Cells[0].Value.ToString();
+        }
+
         private void Form6_Load(object sender, EventArgs e)
         {
             //делает toolStrip прозрачным
@@ -105,6 +116,12 @@ namespace MedicTF2
         {
             //Метод обновления dataGridView
             reload_list();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Doctorinfo Form = new Doctorinfo();
+            Form.ShowDialog();
         }
     }
 }

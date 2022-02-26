@@ -19,4 +19,9 @@ namespace MedicTF2
             Application.Run(new Auth());
         }
     }
+    static class infodoc
+    {
+        public static string doctor_id = "";
+
+    }
 }

@@ -82,9 +82,10 @@ namespace MedicTF2
             this.button6.Location = new System.Drawing.Point(12, 265);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(289, 26);
-            this.button6.TabIndex = 6;
+            this.button6.TabIndex = 5;
             this.button6.Text = "Выход";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // MainMenu
             // 

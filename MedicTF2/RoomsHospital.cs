@@ -35,7 +35,7 @@ namespace MedicTF2
         public void GetListUsers()
         {
             //Запрос для вывода строк в БД
-            string commandStr = "SELECT id_koiki AS 'Код', id_palata AS 'Палата', number_koiki AS 'Койка', FROM koiki";
+            string commandStr = "SELECT id_koiki AS 'Код', id_palata AS 'Палата', number_koiki AS 'Койка' FROM koiki";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
@@ -50,7 +50,7 @@ namespace MedicTF2
             conn.Close();
             //Отражаем количество записей в ДатаГриде
             int count_rows = dataGridView1.RowCount - 1;
-            toolStripLabel2.Text = (count_rows).ToString();
+            toolStripLabel4.Text = (count_rows).ToString();
         }
 
 
@@ -83,6 +83,20 @@ namespace MedicTF2
             dataGridView1.RowHeadersVisible = false;
             //Показываем заголовки столбцов
             dataGridView1.ColumnHeadersVisible = true;
+        }
+
+        public void reload_list()
+        {
+            //Чистим виртуальную таблицу
+            table.Clear();
+            //Вызываем метод получения записей, который вновь заполнит таблицу
+            GetListUsers();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            //Метод обновления dataGridView
+            reload_list();
         }
     }
 }

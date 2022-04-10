@@ -67,6 +67,7 @@ namespace MedicTF2
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(107, 22);
             this.toolStripButton1.Text = "Перезагрузить";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
@@ -82,8 +83,8 @@ namespace MedicTF2
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(19, 22);
-            this.toolStripLabel2.Text = "10";
+            this.toolStripLabel2.Size = new System.Drawing.Size(13, 22);
+            this.toolStripLabel2.Text = "0";
             // 
             // toolStripSeparator2
             // 

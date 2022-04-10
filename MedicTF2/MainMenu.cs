@@ -54,12 +54,6 @@ namespace MedicTF2
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Directory Form9 = new Directory();
-            Form9.ShowDialog();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
             Form Form = new Auth();
             Form.Show();
             this.Close();

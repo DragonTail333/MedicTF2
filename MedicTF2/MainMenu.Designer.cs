@@ -35,7 +35,6 @@ namespace MedicTF2
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
@@ -83,20 +82,9 @@ namespace MedicTF2
             this.button6.Location = new System.Drawing.Point(12, 265);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(289, 26);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Справка";
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Выход";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(8, 346);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Выход";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // MainMenu
             // 
@@ -105,7 +93,6 @@ namespace MedicTF2
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(308, 376);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -126,6 +113,5 @@ namespace MedicTF2
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
     }
 }

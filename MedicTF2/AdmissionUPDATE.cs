@@ -32,7 +32,7 @@ namespace MedicTF2
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             // строка подключения к БД
-            string connStr = "server=caseum.ru;port=33333;user=st_1_1_19;database=st_1_1_19;password=79335329;";
+            string connStr = "server=chuc.caseum.ru;port=33333;user=st_1_19_1;database=is_1_19_st1_KURS;password=97537091;";
             // создаём объект для подключения к БД
             conn = new MySqlConnection(connStr);
             //Вызываем метод установления значений полей

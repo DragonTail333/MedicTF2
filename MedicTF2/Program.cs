@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MedicTF2
 {
@@ -24,4 +25,6 @@ namespace MedicTF2
         public static string doctor_id = "";
 
     }
+
+
 }

@@ -60,8 +60,8 @@ namespace MedicTF2
             while (reader.Read())
             {
                 // элементы массива [] - это значения столбцов из запроса SELECT
-                ///Auth.auth_id = reader[0].ToString();
-                ///Auth.auth_fio = reader[1].ToString();
+                authi.auth_id = reader[0].ToString();
+                authi.auth_fio = reader[1].ToString();
             }
             reader.Close(); // закрываем reader
             // закрываем соединение с БД
@@ -70,6 +70,46 @@ namespace MedicTF2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /*
+            //Запрос в БД на предмет того, если ли строка с подходящим логином и паролем
+            string sql = "SELECT * FROM account WHERE login = @un and  password= @up";
+            //Открытие соединения
+            conn.Open();
+            //Объявляем таблицу
+            DataTable table = new DataTable();
+            //Объявляем адаптер
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            //Объявляем команду
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            //Определяем параметры
+            command.Parameters.Add("@un", MySqlDbType.VarChar, 25);
+            command.Parameters.Add("@up", MySqlDbType.VarChar, 25);
+            //Присваиваем параметрам значение
+            command.Parameters["@un"].Value = textBox1.Text;
+            command.Parameters["@up"].Value = sha256(textBox2.Text);
+            //Заносим команду в адаптер
+            adapter.SelectCommand = command;
+            //Заполняем таблицу
+            adapter.Fill(table);
+            //Закрываем соединение
+            conn.Close();
+            //Если вернулась больше 0 строк, значит такой пользователь существует
+            if (table.Rows.Count > 0)
+            {
+                //Присваеваем глобальный признак авторизации
+                authi.auth = true;
+                //Достаем данные пользователя в случае успеха
+                GetUserInfo(textBox1.Text);
+                //Закрываем форму
+                this.Close();
+            }
+            else
+            {
+                //Отобразить сообщение о том, что авторизаия неуспешна
+                MessageBox.Show("Неверные данные авторизации!");
+            }
+            */
+ 
             Form Form = new MainMenu();
             Form.Show();
         }

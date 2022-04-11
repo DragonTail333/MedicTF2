@@ -120,8 +120,11 @@ namespace MedicTF2
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            Doctorinfo Form = new Doctorinfo();
-            Form.ShowDialog();
+            //Магические строки
+            ///dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
+            ///dataGridView1.CurrentRow.Selected = true;
+            //Метод получения ID выделенной строки в глобальную переменную
+            GetSelectedIDString();
         }
     }
 }

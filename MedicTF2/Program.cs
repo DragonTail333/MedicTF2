@@ -26,5 +26,15 @@ namespace MedicTF2
 
     }
 
+    //Класс необходимый для хранения состояния авторизации во время работы программы
+    static class authi
+    {
+        //Статичное поле, которое хранит значение статуса авторизации
+        public static bool auth = false;
+        //Статичное поле, которое хранит значения ID пользователя
+        public static string auth_id = null;
+        //Статичное поле, которое хранит значения ФИО пользователя
+        public static string auth_fio = null;
+    }
 
 }

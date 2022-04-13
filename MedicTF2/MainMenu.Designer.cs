@@ -35,6 +35,7 @@ namespace MedicTF2
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
@@ -63,7 +64,7 @@ namespace MedicTF2
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(289, 26);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Список палат ";
+            this.button4.Text = "Палаты и койки";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -83,9 +84,19 @@ namespace MedicTF2
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(289, 26);
             this.button6.TabIndex = 5;
-            this.button6.Text = "Выход";
+            this.button6.Text = "О программе";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 297);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(289, 26);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Выход";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // MainMenu
             // 
@@ -94,6 +105,7 @@ namespace MedicTF2
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(308, 376);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -114,5 +126,6 @@ namespace MedicTF2
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -30,6 +30,20 @@ namespace MedicTF2
             conn = new MySqlConnection(connStr);
         }
 
+        //Метод запроса данных пользователя по логину для запоминания их в полях класса
+        static string sha256(string randomString)
+        {
+            //Тут происходит криптографическая магия. Смысл данного метода заключается в том, что строка залетает в метод
+            var crypt = new System.Security.Cryptography.SHA256Managed();
+            var hash = new System.Text.StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(randomString));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
+        }
+
 
         //Метод запроса данных пользователя по логину для запоминания их в полях класса
         public void GetUserInfo(string login_user)
@@ -103,6 +117,18 @@ namespace MedicTF2
  
             //Form Form = new MainMenu();
             //Form.Show();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textBox2.PasswordChar = '\0';
+            }
+            else
+            {
+                textBox2.PasswordChar = '*';
+            }
         }
     }
 }

@@ -54,6 +54,12 @@ namespace MedicTF2
 
         private void button6_Click(object sender, EventArgs e)
         {
+            Programinfo Form = new Programinfo();
+            Form.ShowDialog();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
             Form Form = new Auth();
             Form.Show();
             this.Close();

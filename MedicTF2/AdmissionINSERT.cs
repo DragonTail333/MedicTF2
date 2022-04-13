@@ -44,9 +44,9 @@ namespace MedicTF2
             string n_id_pasient = textBox3.Text;
             string n_id_palati = textBox4.Text;
             string n_id_koiki = textBox5.Text;
-            string n_datapribitia = textBox6.Text;
-            string n_datavipiski = textBox7.Text;
-            string n_datalechit = textBox8.Text;
+            string n_datapribitia = dateTimePicker1.Text;
+            string n_datavipiski = dateTimePicker2.Text;
+            string n_datalechit = dateTimePicker3.Text;
             //Формируем запрос на изменение
             string sql_update_current_pasient = $"INSERT INTO stasionar (id, id_vrach, id_pasient, id_palata, id_koika, date_pribitia, date_vipiski, date_lechit)" +
                 $" VALUES ('{n_id}','{n_id_vrach}', '{n_id_pasient}', '{n_id_palati}', '{n_id_koiki}', '{n_datapribitia}', '{n_datavipiski}', '{n_datalechit}')";

@@ -85,6 +85,7 @@
             this.label9.Size = new System.Drawing.Size(134, 13);
             this.label9.TabIndex = 8;
             this.label9.Text = "© 2021-2022, DragonTail. ";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label5
             // 

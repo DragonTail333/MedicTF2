@@ -41,9 +41,9 @@ namespace MedicTF2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(134, 146);
+            this.button1.Location = new System.Drawing.Point(126, 154);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 40);
+            this.button1.Size = new System.Drawing.Size(148, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@ namespace MedicTF2
             // 
             this.textBox2.Location = new System.Drawing.Point(70, 85);
             this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
+            this.textBox2.PasswordChar = '●';
             this.textBox2.Size = new System.Drawing.Size(302, 20);
             this.textBox2.TabIndex = 3;
             // 
@@ -94,7 +94,7 @@ namespace MedicTF2
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(22, 120);
+            this.checkBox1.Location = new System.Drawing.Point(143, 121);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(114, 17);
             this.checkBox1.TabIndex = 7;
@@ -108,7 +108,7 @@ namespace MedicTF2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(384, 198);
+            this.ClientSize = new System.Drawing.Size(384, 187);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

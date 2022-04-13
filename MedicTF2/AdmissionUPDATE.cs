@@ -57,13 +57,13 @@ namespace MedicTF2
             while (reader.Read())
             {
                 // элементы массива [] - это значения столбцов из запроса SELECT
-                comboBox1.SelectedValue = reader[1].ToString();
-                comboBox2.SelectedValue = reader[2].ToString();
-                comboBox3.SelectedValue = reader[3].ToString();
-                comboBox4.SelectedValue = reader[4].ToString();
-                textBox6.Text = reader[5].ToString();
-                textBox7.Text = reader[6].ToString();
-                textBox8.Text = reader[7].ToString();
+                textBox2.Text = reader[1].ToString();
+                textBox3.Text = reader[2].ToString();
+                textBox4.Text = reader[3].ToString();
+                textBox5.Text = reader[4].ToString();
+                dateTimePicker1.Text = reader[5].ToString();
+                dateTimePicker1.Text = reader[6].ToString();
+                dateTimePicker1.Text = reader[7].ToString();
 
             }
             reader.Close(); // закрываем reader
@@ -75,23 +75,23 @@ namespace MedicTF2
         {
             //Получаем ID изменяемого пациента
             string redact_id = textBox1.Text;
-            ///Получаем значение новых данных из TextBox
-            ///string new_id_vrach = ;
-            ///string new_id_pasient =;
-            ///string new_id_palata = ;
-            ///string new_id_koika = ;
-            string new_date_pribitia = textBox6.Text;
-            string new_date_lechit = textBox7.Text;
-            string new_date_vipiski = textBox8.Text;
+            //Получаем значение новых данных из TextBox
+            string new_id_vrach = textBox2.Text;
+            string new_id_pasient = textBox3.Text;
+            string new_id_palata = textBox4.Text;
+            string new_id_koika = textBox5.Text;
+            string new_date_pribitia = dateTimePicker1.Text;
+            string new_date_lechit = dateTimePicker1.Text;
+            string new_date_vipiski = dateTimePicker1.Text;
             // устанавливаем соединение с БД
             conn.Open();
             // запрос обновления данных
-            ///string query2 = $"UPDATE stasionar SET fio_pasient = '{new_fio}', birthday = '{new_birthday}', sex = '{new_sex}', polis = '{new_polis}'," +
-            /// $" number_phone = '{new_number_phone}', prichina_pribitia  = '{new_prichina_pribitia}' WHERE id_pasient = {redact_id}";
+            string query2 = $"UPDATE stasionar SET id_vrach = '{new_id_vrach}', id_pasient = '{new_id_pasient}', id_palata = '{new_id_palata}', id_koika = '{new_id_koika}'," +
+             $" date_pribitia = '{new_date_pribitia}', date_lechit  = '{new_date_lechit}' , date_vipiski  = '{new_date_vipiski}' WHERE id_pasient = {redact_id}";
             // объект для выполнения SQL-запроса
-            ///MySqlCommand command = new MySqlCommand(query2, conn);
+            MySqlCommand command = new MySqlCommand(query2, conn);
             // выполняем запрос
-            ///command.ExecuteNonQuery();
+            command.ExecuteNonQuery();
             // закрываем подключение к БД
             conn.Close();
         }
@@ -108,19 +108,21 @@ namespace MedicTF2
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(sql, conn);
             // выполняем запрос и получаем ответ
-            string fio_pasient = command.ExecuteScalar().ToString();
-            string birthday = command.ExecuteScalar().ToString();
-            string sex = command.ExecuteScalar().ToString();
-            string polis = command.ExecuteScalar().ToString();
-            string number_phone = command.ExecuteScalar().ToString();
-            string prichina_pribitia = command.ExecuteScalar().ToString();
+            string new_id_vrach = command.ExecuteScalar().ToString(); ;
+            string new_id_pasient = command.ExecuteScalar().ToString(); ;
+            string new_id_palata = command.ExecuteScalar().ToString(); ;
+            string new_id_koika = command.ExecuteScalar().ToString(); ;
+            string new_date_pribitia = command.ExecuteScalar().ToString(); ;
+            string new_date_lechit = command.ExecuteScalar().ToString(); ;
+            string new_date_vipiski = command.ExecuteScalar().ToString(); ;
             // выводим ответ в TextBox
-            comboBox1.SelectedValue = fio_pasient;
-            comboBox2.SelectedValue = birthday;
-            comboBox3.SelectedValue = sex;
-            comboBox4.SelectedValue = polis;
-            textBox6.Text = number_phone;
-            textBox7.Text = prichina_pribitia;
+            textBox2.Text = new_id_vrach;
+            textBox3.Text = new_id_pasient;
+            textBox4.Text = new_id_palata;
+            textBox5.Text = new_id_koika;
+            dateTimePicker1.Text = new_date_pribitia;
+            dateTimePicker2.Text = new_date_lechit;
+            dateTimePicker3.Text = new_date_vipiski;
             // закрываем соединение с БД
             conn.Close();
             SelectData();

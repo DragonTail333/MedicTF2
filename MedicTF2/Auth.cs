@@ -127,7 +127,7 @@ namespace MedicTF2
             }
             else
             {
-                textBox2.PasswordChar = '*';
+                textBox2.PasswordChar = '●';
             }
         }
     }

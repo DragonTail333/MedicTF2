@@ -40,5 +40,10 @@ namespace MedicTF2
         {
             System.Diagnostics.Process.Start("https://t.me/dragonbroyn");
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -51,13 +51,42 @@ namespace MedicTF2
             //Отражаем количество записей в ДатаГриде
             int count_rows = dataGridView1.RowCount - 1;
             toolStripLabel4.Text = (count_rows).ToString();
-            int count_rows2 = dataGridView1.RowCount - 2;
-            toolStripLabel2.Text = (count_rows2).ToString();
+            
         }
 
+        //этот метод помогает высвечивать количество палат.
+        private void PalatCounter(ToolStripLabel TsL)
+        {
+            int PALATcOUNT = 0;
+            string StrCommand = $"SELECT * FROM palati";
+            MySqlCommand newCommand = new MySqlCommand(StrCommand, conn);
+            MySqlDataReader list_co_palati_reader;
+            try
+            {
+                conn.Open();
+                list_co_palati_reader = newCommand.ExecuteReader();
+
+                while (list_co_palati_reader.Read())
+                {
+                    PALATcOUNT++;
+                }
+                list_co_palati_reader.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка подключения");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            TsL.Text = PALATcOUNT.ToString();
+        }
 
         private void RoomsHospital_Load(object sender, EventArgs e)
         {
+            
             //делает toolStrip прозрачным
             this.toolStrip1.BackColor = System.Drawing.Color.Transparent;
             string connStr = "server=chuc.caseum.ru;port=33333;user=st_1_19_1;database=is_1_19_st1_KURS;password=97537091;";
@@ -85,6 +114,7 @@ namespace MedicTF2
             dataGridView1.RowHeadersVisible = false;
             //Показываем заголовки столбцов
             dataGridView1.ColumnHeadersVisible = true;
+            PalatCounter(toolStripLabel2);
         }
 
         public void reload_list()

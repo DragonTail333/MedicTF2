@@ -120,9 +120,17 @@ namespace MedicTF2
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            GetSelectedIDString();
+            infodoc.doctor_id = id_selected_rows;
+            Doctorinfo form = new Doctorinfo();
+            form.ShowDialog();
+        }
+            
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
             //Магические строки
-            ///dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
-            ///dataGridView1.CurrentRow.Selected = true;
+            dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
+            dataGridView1.CurrentRow.Selected = true;
             //Метод получения ID выделенной строки в глобальную переменную
             GetSelectedIDString();
         }

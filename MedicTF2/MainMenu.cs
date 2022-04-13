@@ -19,7 +19,8 @@ namespace MedicTF2
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            //Делает все lable прозрачными
+            this.label1.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void button1_Click(object sender, EventArgs e)

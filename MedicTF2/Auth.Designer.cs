@@ -41,9 +41,9 @@ namespace MedicTF2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(126, 154);
+            this.button1.Location = new System.Drawing.Point(122, 147);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 28);
+            this.button1.Size = new System.Drawing.Size(148, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@ namespace MedicTF2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(384, 187);
+            this.ClientSize = new System.Drawing.Size(384, 189);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

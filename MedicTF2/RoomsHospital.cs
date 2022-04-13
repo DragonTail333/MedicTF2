@@ -51,6 +51,8 @@ namespace MedicTF2
             //Отражаем количество записей в ДатаГриде
             int count_rows = dataGridView1.RowCount - 1;
             toolStripLabel4.Text = (count_rows).ToString();
+            int count_rows2 = dataGridView1.RowCount - 2;
+            toolStripLabel2.Text = (count_rows2).ToString();
         }
 
 

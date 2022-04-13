@@ -30,18 +30,6 @@ namespace MedicTF2
             conn = new MySqlConnection(connStr);
         }
 
-        static string sha256(string randomString)
-        {
-            //Смысл данного метода заключается в том, что строка залетает в метод
-            var crypt = new System.Security.Cryptography.SHA256Managed();
-            var hash = new System.Text.StringBuilder();
-            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(randomString));
-            foreach (byte theByte in crypto)
-            {
-                hash.Append(theByte.ToString("x2"));
-            }
-            return hash.ToString();
-        }
 
         //Метод запроса данных пользователя по логину для запоминания их в полях класса
         public void GetUserInfo(string login_user)
@@ -70,7 +58,7 @@ namespace MedicTF2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*
+            
             //Запрос в БД на предмет того, если ли строка с подходящим логином и паролем
             string sql = "SELECT * FROM account WHERE login = @un and  password= @up";
             //Открытие соединения
@@ -86,7 +74,7 @@ namespace MedicTF2
             command.Parameters.Add("@up", MySqlDbType.VarChar, 25);
             //Присваиваем параметрам значение
             command.Parameters["@un"].Value = textBox1.Text;
-            command.Parameters["@up"].Value = sha256(textBox2.Text);
+            command.Parameters["@up"].Value = textBox2.Text;
             //Заносим команду в адаптер
             adapter.SelectCommand = command;
             //Заполняем таблицу
@@ -101,17 +89,20 @@ namespace MedicTF2
                 //Достаем данные пользователя в случае успеха
                 GetUserInfo(textBox1.Text);
                 //Закрываем форму
-                this.Close();
+                Hide();
+                //Открытие другой формы
+                Form form = new MainMenu();
+                form.ShowDialog();
             }
             else
             {
                 //Отобразить сообщение о том, что авторизаия неуспешна
                 MessageBox.Show("Неверные данные авторизации!");
             }
-            */
+            
  
-            Form Form = new MainMenu();
-            Form.Show();
+            //Form Form = new MainMenu();
+            //Form.Show();
         }
     }
 }

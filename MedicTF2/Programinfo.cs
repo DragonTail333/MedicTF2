@@ -29,21 +29,25 @@ namespace MedicTF2
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://vk.com/id465503557 ");
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://t.me/dragonbroyn");
-        }
-
+       
+        //:3
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+        //Открывает гиперссылку
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://vk.com/id465503557 ");
+        }
+        //Открывает гиперссылку
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://t.me/dragonbroyn");
         }
     }
 }

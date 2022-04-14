@@ -44,29 +44,27 @@ namespace MedicTF2
             string n_id_pasient = textBox3.Text;
             string n_id_palati = textBox4.Text;
             string n_id_koiki = textBox5.Text;
-            string n_datapribitia = dateTimePicker1.Text;
-            string n_datavipiski = dateTimePicker2.Text;
-            string n_datalechit = dateTimePicker3.Text;
+            string n_datapribitia = dateTimePicker1.Value.ToString(string.Format("{0:yyyy-MM-dd}", dateTimePicker1.Value)); ;
+            string n_datavipiski = dateTimePicker2.Value.ToString(string.Format("{0:yyyy-MM-dd}", dateTimePicker2.Value)); ;
+            string n_datalechit = dateTimePicker3.Value.ToString(string.Format("{0:yyyy-MM-dd}", dateTimePicker3.Value)); ;
             //Формируем запрос на изменение
-            string sql_update_current_pasient = $"INSERT INTO stasionar (id, id_vrach, id_pasient, id_palata, id_koika, date_pribitia, date_vipiski, date_lechit)" +
+            string sql_update_current_priem = $"INSERT INTO stasionar (id, id_vrach, id_pasient, id_palata, id_koika, date_prebitia, date_vipiski, date_lechit)" +
                 $" VALUES ('{n_id}','{n_id_vrach}', '{n_id_pasient}', '{n_id_palati}', '{n_id_koiki}', '{n_datapribitia}', '{n_datavipiski}', '{n_datalechit}')";
             // устанавливаем соединение с БД
             conn.Open();
             // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand(sql_update_current_pasient, conn);
+            MySqlCommand command = new MySqlCommand(sql_update_current_priem, conn);
             // выполняем запрос
             command.ExecuteNonQuery();
             // закрываем подключение к БД
             conn.Close();
             //Закрываем форму
             this.Close();
-            //Если оставить поля пустыми, то будет выдавать ошибку, что не все поля заполнены
-            {
-                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "" || textBox8.Text == "")
-                {
-                    MessageBox.Show("Добавить пациента не удалось, вам нужно обязательно заполнить все поля!");
-                }
-            }
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

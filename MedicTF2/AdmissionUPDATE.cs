@@ -47,8 +47,8 @@ namespace MedicTF2
             //Меняем на форме название, с указанием того студента, которого хотим изменить
             this.Text = $"Меняем пользователя ID: {redactid}";
             //Объявляем запрос на вывод данных из таблицы в поля
-            string sql_select_current_priem = $"SELECT stasionar.id, stasionar.id_vrach, stasionar.id_pasient," +
-                $" stasionar.id_palata, stasionar.id_koika FROM stasionar WHERE id = {redactid}";
+            string sql_select_current_priem = $"SELECT stasionar.id, stasionar.id_vrach, stasionar.id_pasient, stasionar.id_palata, stasionar.id_koika," +
+                $"stasionar.date_prebitia, stasionar.date_vipiski, stasionar.date_lechit FROM stasionar WHERE id = {redactid}";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(sql_select_current_priem, conn);
             // объект для чтения ответа сервера
@@ -61,9 +61,9 @@ namespace MedicTF2
                 textBox3.Text = reader[2].ToString();
                 textBox4.Text = reader[3].ToString();
                 textBox5.Text = reader[4].ToString();
-                dateTimePicker1.Text = reader[5].ToString();
-                dateTimePicker1.Text = reader[6].ToString();
-                dateTimePicker1.Text = reader[7].ToString();
+                dateTimePicker1.Value = (DateTime)new DateTimeConverter().ConvertFrom(reader[5].ToString());
+                dateTimePicker2.Value = (DateTime)new DateTimeConverter().ConvertFrom(reader[6].ToString());
+                dateTimePicker3.Value = (DateTime)new DateTimeConverter().ConvertFrom(reader[7].ToString());
 
             }
             reader.Close(); // закрываем reader
@@ -80,16 +80,18 @@ namespace MedicTF2
             string n_id_pasient = textBox3.Text;
             string n_id_palati = textBox4.Text;
             string n_id_koiki = textBox5.Text;
-            string n_datapribitia = dateTimePicker1.Value.ToString(string.Format("{0:yyyy-MM-dd}", dateTimePicker1.Value)); ;
-            string n_datavipiski = dateTimePicker2.Value.ToString(string.Format("{0:yyyy-MM-dd}", dateTimePicker2.Value)); ;
-            string n_datalechit = dateTimePicker3.Value.ToString(string.Format("{0:yyyy-MM-dd}", dateTimePicker3.Value)); ;
             // устанавливаем соединение с БД
             conn.Open();
             // запрос обновления данных
             string query2 = $"UPDATE stasionar SET id_vrach = '{n_id_vrach}', id_pasient = '{n_id_pasient}', id_palata = '{n_id_palati}', id_koika = '{n_id_koiki}'," +
-             $" date_pribitia = '{n_datapribitia}', date_lechit  = '{n_datalechit}' , date_vipiski  = '{n_datavipiski}' WHERE id_pasient = {redact_id}";
+             $" date_prebitia = @dateo, date_lechit  = @dated , date_vipiski  = @dateb WHERE id_pasient = {redact_id}";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(query2, conn);
+
+            // объект для выполнения SQL-запроса
+            command.Parameters.Add("@dateo", MySqlDbType.Timestamp).Value = dateTimePicker1.Value;
+            command.Parameters.Add("@dated", MySqlDbType.Timestamp).Value = dateTimePicker2.Value;
+            command.Parameters.Add("@dateb", MySqlDbType.Timestamp).Value = dateTimePicker3.Value;
             // выполняем запрос
             command.ExecuteNonQuery();
             // закрываем подключение к БД
@@ -98,33 +100,6 @@ namespace MedicTF2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Объявлем переменную для запроса в БД
-            string selected_id = textBox1.Text;
-            // устанавливаем соединение с БД
-            conn.Open();
-            // запрос
-            string sql = $"SELECT id, id_vrach, id_pasient, id_palata, " +
-                $"id_koika FROM stasionar WHERE id={selected_id}";
-            // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand(sql, conn);
-            // выполняем запрос и получаем ответ
-            string new_id_vrach = command.ExecuteScalar().ToString(); ;
-            string new_id_pasient = command.ExecuteScalar().ToString(); ;
-            string new_id_palata = command.ExecuteScalar().ToString(); ;
-            string new_id_koika = command.ExecuteScalar().ToString(); ;
-            //string new_date_pribitia = command.ExecuteScalar().ToString(); ;
-            //string new_date_lechit = command.ExecuteScalar().ToString(); ;
-            //string new_date_vipiski = command.ExecuteScalar().ToString(); ;
-            // выводим ответ в TextBox
-            textBox2.Text = new_id_vrach;
-            textBox3.Text = new_id_pasient;
-            textBox4.Text = new_id_palata;
-            textBox5.Text = new_id_koika;
-            //dateTimePicker1.Text = new_date_pribitia;
-            //dateTimePicker2.Text = new_date_lechit;
-            //dateTimePicker3.Text = new_date_vipiski;
-            // закрываем соединение с БД
-            conn.Close();
             SelectData();
         }
     }

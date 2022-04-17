@@ -31,7 +31,7 @@ namespace MedicTF2
         private DataTable table = new DataTable();
         //Переменная для ID записи в БД, выбранной в гриде. Пока она не содердит значения, лучше его инициализировать с 0
         //что бы в БД не отправлялся null
-        string id_selected_rows = "0";
+        public static string id_selected_rows = "0";
 
         public void GetListUsers()
         {

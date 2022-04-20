@@ -58,8 +58,8 @@ namespace MedicTF2
                 textBox2.Text = reader[1].ToString();
                 dateTimePicker1.Value = (DateTime)new DateTimeConverter().ConvertFrom(reader[2].ToString());
                 comboBox1.Text = reader[3].ToString();
-                textBox5.Text = reader[4].ToString();
-                textBox6.Text = reader[5].ToString();
+                maskedTextBox1.Text = reader[4].ToString();
+                maskedTextBox2.Text = reader[5].ToString(); //добавил маску текст бокс, как просила Рыскулова
                 textBox7.Text = reader[6].ToString();
 
             }
@@ -85,8 +85,8 @@ namespace MedicTF2
             //Получаем значение новых данных из TextBox
             string new_fio = textBox2.Text;
             string new_sex = comboBox1.Text;
-            string new_polis = textBox5.Text;
-            string new_number_phone = textBox6.Text;
+            string new_polis = maskedTextBox1.Text;
+            string new_number_phone = maskedTextBox2.Text;
             string new_prichina_pribitia = textBox7.Text;
             // запрос обновления данных
             string query2 = $"UPDATE pasienti SET fio_pasient = '{new_fio}', birthday = '@dateb', sex = '{new_sex}', polis = '{new_polis}'," +

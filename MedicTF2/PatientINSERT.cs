@@ -43,8 +43,8 @@ namespace MedicTF2
             string n_fio = textBox1.Text;
             string n_birthday = dateTimePicker1.Value.ToString(string.Format("{0:yyyy-MM-dd}", dateTimePicker1.Value)); 
             string n_sex = comboBox1.Text;
-            string n_polis = textBox4.Text;
-            string n_number = textBox5.Text;
+            string n_polis = maskedTextBox1.Text;
+            string n_number = maskedTextBox2.Text;
             string n_diagnoz = textBox6.Text;
             //Формируем запрос на изменение
             string sql_update_current_pasient = $"INSERT INTO pasienti (id_pasient, fio_pasient, birthday, sex, polis, number_phone, prichina_pribitia)" +
@@ -61,7 +61,7 @@ namespace MedicTF2
             this.Close();
             //Если оставить поля пустыми, то будет выдавать ошибку, что не все поля заполнены
             {
-                if (textBox1.Text == "" || comboBox1.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
+                if (textBox1.Text == "" || comboBox1.Text == "" || maskedTextBox1.Text == "" || maskedTextBox2.Text == "" || textBox6.Text == "")
                 {
                     MessageBox.Show("Добавить пациента не удалось!");
                 }

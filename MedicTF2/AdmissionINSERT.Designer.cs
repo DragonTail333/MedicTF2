@@ -238,7 +238,6 @@ namespace MedicTF2
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(397, 20);
             this.dateTimePicker3.TabIndex = 20;
-            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // AdmissionINSERT
             // 

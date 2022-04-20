@@ -62,9 +62,6 @@ namespace MedicTF2
             this.Close();
         }
 
-        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

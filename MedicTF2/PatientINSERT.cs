@@ -41,8 +41,8 @@ namespace MedicTF2
             //Объявляем переменные для вставки в БД
             string n_id_pasient = textBox7.Text;
             string n_fio = textBox1.Text;
-            string n_birthday = textBox2.Text;
-            string n_sex = textBox3.Text;
+            string n_birthday = dateTimePicker1.Value.ToString(string.Format("{0:yyyy-MM-dd}", dateTimePicker1.Value)); 
+            string n_sex = comboBox1.Text;
             string n_polis = textBox4.Text;
             string n_number = textBox5.Text;
             string n_diagnoz = textBox6.Text;
@@ -61,9 +61,9 @@ namespace MedicTF2
             this.Close();
             //Если оставить поля пустыми, то будет выдавать ошибку, что не все поля заполнены
             {
-                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
+                if (textBox1.Text == "" || comboBox1.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
                 {
-                    MessageBox.Show("Добавить пациента не удалось, вам нужно обязательно заполнить все поля!");
+                    MessageBox.Show("Добавить пациента не удалось!");
                 }
                 else
                 {

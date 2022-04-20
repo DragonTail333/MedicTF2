@@ -44,7 +44,7 @@ namespace MedicTF2
             //Открываем соединение
             conn.Open();
             string redactid = textBox1.Text;
-            //Меняем на форме название, с указанием того студента, которого хотим изменить
+            //Меняем на форме название, с указанием того приёма, которого хотим изменить
             this.Text = $"Меняем пользователя ID: {redactid}";
             //Объявляем запрос на вывод данных из таблицы в поля
             string sql_select_current_priem = $"SELECT stasionar.id, stasionar.id_vrach, stasionar.id_pasient, stasionar.id_palata, stasionar.id_koika," +
@@ -87,7 +87,6 @@ namespace MedicTF2
              $" date_prebitia = @dateo, date_lechit  = @dated , date_vipiski  = @dateb WHERE id_pasient = {redact_id}";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(query2, conn);
-
             // объект для выполнения SQL-запроса
             command.Parameters.Add("@dateo", MySqlDbType.Timestamp).Value = dateTimePicker1.Value;
             command.Parameters.Add("@dated", MySqlDbType.Timestamp).Value = dateTimePicker2.Value;

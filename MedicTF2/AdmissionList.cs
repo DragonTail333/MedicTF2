@@ -112,6 +112,7 @@ namespace MedicTF2
             dataGridView1.RowHeadersVisible = false;
             //Показываем заголовки столбцов
             dataGridView1.ColumnHeadersVisible = true;
+
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

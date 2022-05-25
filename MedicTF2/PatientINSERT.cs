@@ -46,30 +46,35 @@ namespace MedicTF2
             string n_polis = maskedTextBox1.Text;
             string n_number = maskedTextBox2.Text;
             string n_diagnoz = textBox6.Text;
-            //Формируем запрос на изменение
-            string sql_update_current_pasient = $"INSERT INTO pasienti (id_pasient, fio_pasient, birthday, sex, polis, number_phone, prichina_pribitia)" +
-                $" VALUES ('{n_id_pasient}','{n_fio}', '{n_birthday}', '{n_sex}', '{n_polis}', '{n_number}', '{n_diagnoz}')";
-            // устанавливаем соединение с БД
-            conn.Open();
-            // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand(sql_update_current_pasient, conn);
-            // выполняем запрос
-            command.ExecuteNonQuery();
-            // закрываем подключение к БД
-            conn.Close();
-            //Закрываем форму
-            this.Close();
-            //Если оставить поля пустыми, то будет выдавать ошибку, что не все поля заполнены
+            //Конструкция, которая помогает добавлять данные в БД, а также ограничивая добавление, если строки пусты или недописанны до конца
+            if (textBox1.Text == "" || comboBox1.Text == "" || maskedTextBox1.Text == "" || maskedTextBox2.Text == "" || textBox6.Text == "")
             {
-                if (textBox1.Text == "" || comboBox1.Text == "" || maskedTextBox1.Text == "" || maskedTextBox2.Text == "" || textBox6.Text == "")
+                MessageBox.Show("Добавить пациента не удалось!");
+            }
+            else
+            {
+                string ban1 = maskedTextBox1.Text;
+                string ban2 = maskedTextBox2.Text;
+                if(ban1.Length < 19 || ban2.Length < 11)
                 {
-                    MessageBox.Show("Добавить пациента не удалось!");
+                    MessageBox.Show("Вы ввели недостаточно символов");
                 }
                 else
                 {
-                    MessageBox.Show("Пациент успешно добавлен в базу данных!");
+                    string sql_update_current_pasient = $"INSERT INTO pasienti (id_pasient, fio_pasient, birthday, sex, polis, number_phone, prichina_pribitia)" +
+                $" VALUES ('{n_id_pasient}','{n_fio}', '{n_birthday}', '{n_sex}', '{n_polis}', '{n_number}', '{n_diagnoz}')";
+                    // устанавливаем соединение с БД
+                    conn.Open();
+                    // объект для выполнения SQL-запроса
+                    MySqlCommand command = new MySqlCommand(sql_update_current_pasient, conn);
+                    // выполняем запрос
+                    command.ExecuteNonQuery();
+                    // закрываем подключение к БД
+                    conn.Close();
+                    //Закрываем форму
+                    this.Close();
                 }
             }
-            }
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace MedicTF2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(114, 9);
+            this.label1.Location = new System.Drawing.Point(114, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace MedicTF2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 77);
+            this.label2.Location = new System.Drawing.Point(12, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace MedicTF2
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 134);
+            this.label3.Location = new System.Drawing.Point(12, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 13);
             this.label3.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace MedicTF2
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 189);
+            this.label4.Location = new System.Drawing.Point(12, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 13);
             this.label4.TabIndex = 3;
@@ -81,7 +81,7 @@ namespace MedicTF2
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 240);
+            this.label5.Location = new System.Drawing.Point(12, 201);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 4;
@@ -90,7 +90,7 @@ namespace MedicTF2
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(65, 77);
+            this.label6.Location = new System.Drawing.Point(55, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 5;
@@ -99,7 +99,7 @@ namespace MedicTF2
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(114, 134);
+            this.label7.Location = new System.Drawing.Point(114, 104);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 6;
@@ -108,7 +108,7 @@ namespace MedicTF2
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(109, 189);
+            this.label8.Location = new System.Drawing.Point(106, 146);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 7;
@@ -117,7 +117,7 @@ namespace MedicTF2
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(106, 240);
+            this.label9.Location = new System.Drawing.Point(106, 201);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 8;
@@ -125,7 +125,7 @@ namespace MedicTF2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(100, 267);
+            this.button1.Location = new System.Drawing.Point(101, 278);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 31);
             this.button1.TabIndex = 9;
@@ -139,7 +139,7 @@ namespace MedicTF2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MedicTF2.Properties.Resources._1613701141_75_p_meditsinskii_fon_dlya_prezentatsii_84;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(296, 310);
+            this.ClientSize = new System.Drawing.Size(296, 321);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);

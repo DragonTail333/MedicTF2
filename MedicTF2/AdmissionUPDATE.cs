@@ -36,7 +36,6 @@ namespace MedicTF2
             // создаём объект для подключения к БД
             conn = new MySqlConnection(connStr);
             //Вызываем метод установления значений полей
-            //SelectData();
         }
 
         public void SelectData()

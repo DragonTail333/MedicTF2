@@ -88,7 +88,7 @@ namespace MedicTF2
             string new_number_phone = maskedTextBox2.Text;
             string new_prichina_pribitia = textBox7.Text;
             // запрос обновления данных
-            string query2 = $"UPDATE pasienti SET fio_pasient = '{new_fio}', birthday = '@dateb', sex = '{new_sex}', polis = '{new_polis}'," +
+            string query2 = $"UPDATE pasienti SET fio_pasient = '{new_fio}', birthday = @dateb, sex = '{new_sex}', polis = '{new_polis}'," +
                 $" number_phone = '{new_number_phone}', prichina_pribitia  = '{new_prichina_pribitia}' WHERE id_pasient = {redact_id}";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(query2, conn);

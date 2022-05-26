@@ -46,9 +46,9 @@ namespace MedicTF2
             return hash.ToString();
         }
 
-        public class CryptoBruh256
+        public class CryptoSnake256
         {
-            public static string CryptBruh256(string text)
+            public static string CryptSnake256(string text)
             {
                 byte[] data = Encoding.Default.GetBytes(text);
                 var result = new SHA256Managed().ComputeHash(data);
@@ -86,7 +86,7 @@ namespace MedicTF2
             string login = textBox1.Text;
             string password = textBox2.Text;
             //Запрос в БД на предмет того, если ли строка с подходящим логином и паролем
-            string sql = ($"SELECT * FROM `account` WHERE login = '{login}' AND password = '{CryptoBruh256.CryptBruh256(password)}'");
+            string sql = ($"SELECT * FROM `account` WHERE login = '{login}' AND password = '{CryptoSnake256.CryptSnake256(password)}'");
             //Открытие соединения
             conn.Open();
             //Объявляем таблицу
@@ -117,7 +117,7 @@ namespace MedicTF2
             }
             else
             {
-                MessageBox.Show(CryptoBruh256.CryptBruh256(password));
+                MessageBox.Show(CryptoSnake256.CryptSnake256(password));
                 //Отобразить сообщение о том, что авторизаия неуспешна
                 MessageBox.Show("Неверные данные авторизации!");
             }

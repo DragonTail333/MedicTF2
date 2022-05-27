@@ -63,6 +63,31 @@ namespace MedicTF2
             GetListUsers();
         }
 
+        //Метод удаления пользователей
+        public void DeleteUser()
+        {
+            //Формируем строку запроса на добавление строк
+            string sql_delete_user = "DELETE FROM pasienti WHERE id_pasient='" + id_selected_rows + "'";
+            //Посылаем запрос на обновление данных
+            MySqlCommand delete_user = new MySqlCommand(sql_delete_user, conn);
+            try
+            {
+                conn.Open();
+                delete_user.ExecuteNonQuery();
+                MessageBox.Show("Удаление прошло успешно", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка удаления строки \n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+            finally
+            {
+                conn.Close();
+                //Вызов метода обновления ДатаГрида
+                reload_list();
+            }
+        }
         private void Form8_Load(object sender, EventArgs e)
         {
             //делает toolStrip прозрачным
@@ -123,14 +148,7 @@ namespace MedicTF2
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            //Тестим вывод ID выбранной строки в MessageBox
-            MessageBox.Show("Содержимое поля Код, в выбранной строке" + id_selected_rows);
-            //Формируем запрос на удаление из БД на основании полученного ID записи в БД
-            MessageBox.Show("DELETE FROM stasionar WHERE id=" + id_selected_rows);
-            //В данной кнопке, вы можете вызвать метод удаления строки и в качестве
-            //параметра передать ему переменную id_selected_rows в которой хранится
-            //id записи в БД для удаления. Аналогично, вы можете изменить любую строку
-            //так же, передав в качестве параметра данную переменную
+            DeleteUser();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)

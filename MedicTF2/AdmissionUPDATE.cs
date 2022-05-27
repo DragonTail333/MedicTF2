@@ -82,7 +82,8 @@ namespace MedicTF2
             // устанавливаем соединение с БД
             conn.Open();
             // запрос обновления данных
-            string query2 = $"UPDATE stasionar SET id_vrach = '{n_id_vrach}', id_pasient = '{n_id_pasient}', id_palata = '{n_id_palati}', id_koika = '{n_id_koiki}'," +
+            string query2 = $"UPDATE stasionar SET id_vrach = '{n_id_vrach}', id_pasient = '{n_id_pasient}', " +
+                $"id_palata = '{n_id_palati}', id_koika = '{n_id_koiki}'," +
              $" date_prebitia = @dateo, date_lechit  = @dated , date_vipiski  = @dateb WHERE id_pasient = {redact_id}";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(query2, conn);

@@ -58,7 +58,7 @@ namespace MedicTF2
                 dateTimePicker1.Value = (DateTime)new DateTimeConverter().ConvertFrom(reader[2].ToString());
                 comboBox1.Text = reader[3].ToString();
                 maskedTextBox1.Text = reader[4].ToString();
-                maskedTextBox2.Text = reader[5].ToString(); //добавил маску текст бокс, как просила Рыскулова
+                maskedTextBox2.Text = reader[5].ToString(); 
                 textBox7.Text = reader[6].ToString();
 
             }

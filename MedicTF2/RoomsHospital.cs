@@ -35,7 +35,8 @@ namespace MedicTF2
         public void GetListUsers()
         {
             //Запрос для вывода строк в БД
-            string commandStr = "SELECT id_koiki AS 'Код', id_palata AS 'Палата', number_koiki AS 'Койка' FROM koiki";
+            string commandStr = "SELECT id_koiki AS 'Код', id_palata AS" +
+                " 'Палата', number_koiki AS 'Койка' FROM koiki";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
@@ -86,10 +87,10 @@ namespace MedicTF2
 
         private void RoomsHospital_Load(object sender, EventArgs e)
         {
-            
             //делает toolStrip прозрачным
             this.toolStrip1.BackColor = System.Drawing.Color.Transparent;
-            string connStr = "server=chuc.caseum.ru;port=33333;user=st_1_19_1;database=is_1_19_st1_KURS;password=97537091;";
+            string connStr = "server=chuc.caseum.ru;port=33333;user=st_1_19_1;" +
+                "database=is_1_19_st1_KURS;password=97537091;";
             // создаём объект для подключения к БД
             conn = new MySqlConnection(connStr);
             //Вызываем метод для заполнение дата Грида

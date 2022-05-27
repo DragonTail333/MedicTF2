@@ -23,12 +23,6 @@ namespace MedicTF2
             this.label1.BackColor = System.Drawing.Color.Transparent;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            PatientINSERT Form4 = new PatientINSERT();
-            Form4.ShowDialog();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             PatientList Form5 = new PatientList();

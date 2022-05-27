@@ -32,9 +32,6 @@ namespace MedicTF2
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
         }
-
-       
-        //:3
         private void label9_Click(object sender, EventArgs e)
         {
 

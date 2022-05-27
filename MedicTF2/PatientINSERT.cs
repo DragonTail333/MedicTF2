@@ -13,7 +13,6 @@ namespace MedicTF2
 {
     public partial class PatientINSERT : Form
     {
-      
         public PatientINSERT()
         {
             InitializeComponent();
@@ -61,7 +60,8 @@ namespace MedicTF2
                 }
                 else
                 {
-                    string sql_update_current_pasient = $"INSERT INTO pasienti (id_pasient, fio_pasient, birthday, sex, polis, number_phone, prichina_pribitia)" +
+                    string sql_update_current_pasient = $"INSERT INTO pasienti (id_pasient, fio_pasient," +
+                        $" birthday, sex, polis, number_phone, prichina_pribitia)" +
                 $" VALUES ('{n_id_pasient}','{n_fio}', '{n_birthday}', '{n_sex}', '{n_polis}', '{n_number}', '{n_diagnoz}')";
                     // устанавливаем соединение с БД
                     conn.Open();

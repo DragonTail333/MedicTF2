@@ -86,7 +86,8 @@ namespace MedicTF2
             string login = textBox1.Text;
             string password = textBox2.Text;
             //Запрос в БД на предмет того, если ли строка с подходящим логином и паролем
-            string sql = ($"SELECT * FROM `account` WHERE login = '{login}' AND password = '{CryptoSnake256.CryptSnake256(password)}'");
+            string sql = ($"SELECT * FROM `account` WHERE login = '{login}' " +
+                $"AND password = '{CryptoSnake256.CryptSnake256(password)}'");
             //Открытие соединения
             conn.Open();
             //Объявляем таблицу
@@ -121,10 +122,6 @@ namespace MedicTF2
                 //Отобразить сообщение о том, что авторизаия неуспешна
                 MessageBox.Show("Неверные данные авторизации!");
             }
-            
- 
-            //Form Form = new MainMenu();
-            //Form.Show();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

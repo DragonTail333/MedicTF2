@@ -107,7 +107,6 @@ namespace MedicTF2
             reload_list();
         }
         
-
         private void Form5_Load(object sender, EventArgs e)
         {
             //делает toolStrip прозрачным
@@ -153,7 +152,6 @@ namespace MedicTF2
             dataGridView1.RowHeadersVisible = false;
             //Показываем заголовки столбцов
             dataGridView1.ColumnHeadersVisible = true;
-
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -189,10 +187,6 @@ namespace MedicTF2
         }
 
 
-
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
     }       
 }           
             

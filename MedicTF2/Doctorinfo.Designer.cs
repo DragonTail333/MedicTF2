@@ -81,7 +81,7 @@ namespace MedicTF2
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 201);
+            this.label5.Location = new System.Drawing.Point(12, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 4;
@@ -117,7 +117,7 @@ namespace MedicTF2
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(106, 201);
+            this.label9.Location = new System.Drawing.Point(106, 186);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 8;
@@ -125,9 +125,9 @@ namespace MedicTF2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(101, 278);
+            this.button1.Location = new System.Drawing.Point(95, 244);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 31);
+            this.button1.Size = new System.Drawing.Size(111, 42);
             this.button1.TabIndex = 9;
             this.button1.Text = "Закрыть";
             this.button1.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@ namespace MedicTF2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MedicTF2.Properties.Resources._1613701141_75_p_meditsinskii_fon_dlya_prezentatsii_84;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(296, 321);
+            this.ClientSize = new System.Drawing.Size(296, 298);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);

@@ -41,7 +41,6 @@ namespace MedicTF2
             conn = new MySqlConnection(connStr);
             //Открываем соединение
             conn.Open();
-
             //Меняем на форме название, с указанием того контакта, которого хотим изменить
             this.Text = $"Информация ID: {infodoc.doctor_id}";
             //Объявляем запрос на вывод данных из таблицы в поля

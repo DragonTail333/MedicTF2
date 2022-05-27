@@ -37,7 +37,8 @@ namespace MedicTF2
         public void GetListUsers()
         {
             //Запрос для вывода строк в БД
-            string commandStr = "SELECT id_vrach AS 'Код', fio_vrach AS 'ФИО', nphone_vrach AS 'Телефон', spes AS 'Специальность', graficworks AS 'График работы' FROM vrachi";
+            string commandStr = "SELECT id_vrach AS 'Код', fio_vrach AS 'ФИО', nphone_vrach AS" +
+                " 'Телефон', spes AS 'Специальность', graficworks AS 'График работы' FROM vrachi";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
